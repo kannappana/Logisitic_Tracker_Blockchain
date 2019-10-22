@@ -1,0 +1,23 @@
+{
+   "host":"localhost",
+   "port1":"4000",
+   "port2":"5000",
+   "jwt_expiretime": "36000",
+   "channelName":"mychannel",
+   "CC_SRC_PATH":"../artifacts",
+   "eventWaitTime":"30000",
+   "enableTls":false,
+   "admins":[
+      {
+         "username":"admin",
+         "secret":"adminpw"
+      }
+   ],
+   "chaincode":"mycc",
+   "timeLimit":"2",
+   "tempLimit":"20",
+   "tempuratureData":[
+       {"12345":[17,18,19,20,12],
+        "12":[17,18,20,21,16]}
+   ]
+}

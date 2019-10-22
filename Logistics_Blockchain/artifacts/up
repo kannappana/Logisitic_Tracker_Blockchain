@@ -1,0 +1,18 @@
+docker-compose -f docker-compose.caOrg1 up -d
+sleep 5s
+docker-compose -f docker-compose.caOrg2 up -d
+sleep 5s
+docker-compose -f docker-compose.caOrg3 up -d
+sleep 5s
+docker-compose -f docker-compose.orderer up -d
+sleep 5s
+docker-compose -f docker-compose.peerOrg1 up -d
+sleep 5s
+docker-compose -f docker-compose.peerOrg2 up -d
+sleep 5s
+docker-compose -f docker-compose.peerOrg3 up -d
+sleep 5s
+docker-compose -f docker-compose.cli up -d
+echo "**** Running docker ps ****"
+sleep 2s
+docker ps -a

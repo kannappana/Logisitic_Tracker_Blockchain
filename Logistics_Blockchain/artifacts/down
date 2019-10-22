@@ -1,0 +1,13 @@
+docker-compose -f docker-compose.caOrg1 down
+docker-compose -f docker-compose.caOrg2 down
+docker-compose -f docker-compose.caOrg3 down
+docker-compose -f docker-compose.orderer down
+docker-compose -f docker-compose.peerOrg1 down
+docker-compose -f docker-compose.peerOrg2 down
+docker-compose -f docker-compose.peerOrg3 down
+docker-compose -f docker-compose.cli down
+echo "**** Running docker ps ****"
+sleep 2s
+rm -rf fabric-client-kv-org*
+sleep 2s
+docker ps -a
