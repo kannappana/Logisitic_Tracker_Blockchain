@@ -1,0 +1,80 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Add Shipment Details
+        </h1>
+        <ol class="breadcrumb">
+            <li><a [routerLink]="['./seller-shipment-details']"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Add Shipment Details</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <section class="col-lg-12 connectedSortable">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Add Shipment Details</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="shipmentAdded" *ngIf="shipmentAddedStatus">Shipment Added Successfully</div>
+                        <form [formGroup]="addShipmentForm" (ngSubmit)="onAddShipmentSubmit()">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="shipmentId" class="control-label">Shipment</label>
+                                            <input type="text" class="form-control" formControlName="shipmentId"
+                                                placeholder="Shipment Id">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="sellerLocation" class="control-label">Logistic</label>
+                                            <input type="text" class="form-control" formControlName="logisticID"
+                                                placeholder="Logistic Id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="shipmentId" class="control-label">Seller</label>
+                                            <input type="text" class="form-control" formControlName="seller"
+                                                placeholder="Seller Id">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="sellerLocation" class="control-label">Seller Location</label>
+                                            <input type="text" class="form-control" formControlName="sellerLocation"
+                                                placeholder="Seller Location">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="buyerId" class="control-label">Buyer</label>
+                                            <input type="text" class="form-control" formControlName="buyerId" 
+                                            placeholder="Buyer Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="buyerLocation" class="control-label">Buyer Location</label>
+                                            <input type="text" class="form-control" formControlName="buyerLocation"
+                                                placeholder="Buyer Location">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-info center-block">Add Shipment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>

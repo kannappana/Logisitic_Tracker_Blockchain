@@ -1,0 +1,57 @@
+{
+  "login": [
+    {
+      "username": "admin",
+      "password": "adminpwd"
+    }
+  ],
+  "role": {
+    "0": "--Select Role--",
+    "1": "buyer",
+    "2": "seller",
+    "3": "logistic"
+  },
+  "buyer": [
+    {
+      "id": 1,
+      "shipment": "Shipment 2",
+      "sellers_location": "Mumbai",
+      "seller_id": "Seller 1",
+      "logistic_id": "Logistic 1",
+      "buyers_location": "Coimbatore",
+      "temperature_breach": "No (18 Celsius)",
+      "change_status": "0"
+    }
+  ],
+  "seller": [
+    {
+      "id": 1,
+      "role": "buyer",
+      "data": [
+        {
+          "shipmentId": "Shipment 1",
+          "sellerLocation": "Chennai",
+          "status": "reject",
+          "buyerId": "Buyer 1",
+          "buyerLocation": "Bangalore",
+          "tempuratureBreach": "Yes (30deg. Celsius)",
+          "logisticID": "Logistic1",
+          "seller": "seller1"
+        }
+      ]
+    }
+  ],
+  "provider": [
+    {
+      "id": 1,
+      "shipmentId": "Shipment 1",
+      "sellerLocation": "Chennai",
+      "status": "delivered",
+      "buyerId": "Buyer 1",
+      "buyerLocation": "Bangalore",
+      "tempuratureBreach": "Yes (30deg. Celsius)",
+      "logisticID": "Logistic1",
+      "seller": "seller1"
+    }
+  ]
+}

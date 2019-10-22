@@ -1,0 +1,8 @@
+<div *ngIf="showhidemain" class="wrapper"> 
+  <app-header></app-header>
+  <main>
+    <app-left-menu></app-left-menu>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<app-signin *ngIf="showhidesignin"></app-signin>

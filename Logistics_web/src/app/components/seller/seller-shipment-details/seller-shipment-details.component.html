@@ -1,0 +1,107 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Seller Shipment Details
+        </h1>
+        <ol class="breadcrumb">
+            <li><a [routerLink]="['./seller-shipment-details']"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Shipment Details</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <section class="col-lg-12 connectedSortable">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Shipment Details</h3>
+                    </div>
+                    <div class="box-body">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Shipment</th>
+                                    <th>Sellers Location</th>
+                                    <th>Status</th>
+                                    <th>Buyer</th>
+                                    <th>Buyers Location</th>
+                                    <th>Temperature Breach</th>
+                                    <th>Time Raster</th>
+                                    <th>Change status</th>
+                                </tr>
+                                <tr *ngFor="let element of testData">
+                                    <td>{{element.shipmentId}}</td>
+                                    <td>{{element.sellerLocation}}</td>
+                                    <td>{{element.status}}</td>
+                                    <td>{{element.buyerId}}</td>
+                                    <td>{{element.buyerLocation}}</td>
+                                    <td>{{element.tempuratureBreach}}</td>
+                                    <td>
+                                        <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"> Launch Default Modal </button> -->
+                                        <a href="#" data-toggle="modal" data-target="#sellerModal" (click)="modalRefresh(element)"> View Temperature
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button *ngIf="element.status == 'in-store'"
+                                            (click)="changeStatusInStore(element)" type="button"
+                                            class="btn btn-block btn-success">in-store</button>
+                                        <button *ngIf="element.status == 'in-transit'" type="button"
+                                            class="btn btn-block btn-danger" disabled="disabled">in-transit</button>
+                                    </td>
+                                    <!-- <tr *ngFor="let element of testData">
+                                    <ng-container *ngFor="let newElement of element.data">
+                                        <td>{{newElement.shipmentId}}</td>
+                                        <td>{{newElement.sellerLocation}}</td>
+                                        <td>{{newElement.status}}</td>
+                                        <td>{{newElement.buyerId}}</td>
+                                        <td>{{newElement.buyerLocation}}</td>
+                                        <td>{{newElement.tempuratureBreach}}</td>
+                                        <td>
+                                            <button *ngIf="newElement.status == 'in-store'"
+                                                (click)="changeStatusInStore(element)" type="button"
+                                                class="btn btn-block btn-success">in-store</button>
+                                            <button *ngIf="newElement.status == 'in-transit'" type="button"
+                                                class="btn btn-block btn-danger" disabled="disabled">in-transit</button>
+                                        </td>
+                                    </ng-container> -->
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </section>
+</div>
+
+<div class="modal fade" id="sellerModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Time Raster</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>Time</th>
+                                <th>Temperature</th>
+                            </tr>
+                            <tr *ngFor="let timeRasterData of timeRaster">
+                                <td>{{ timeRasterData.time }}</td>
+                                <td>{{ timeRasterData.temp }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+            </div>
+        </div>
+    </div>

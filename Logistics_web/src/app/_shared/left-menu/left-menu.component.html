@@ -1,0 +1,31 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img *ngIf="userLoginRole == 'buyer'" src="../../../assets/images/1.jpg" class="image-circle"
+                    alt="User Image">
+                <img *ngIf="userLoginRole == 'seller'" src="../../../assets/images/1.jpg" class="image-circle"
+                    alt="User Image">
+                <img *ngIf="userLoginRole == 'logistic'" src="../../../assets/images/doctor_profile.png" class="image-circle"
+                    alt="Doctor Image">
+            </div>
+            <div class="pull-left info">
+                <p *ngIf="userLoginRole == 'buyer'">Buyer</p>
+                <p *ngIf="userLoginRole == 'seller'">Seller</p>
+                <p *ngIf="userLoginRole == 'logistic'">Provider</p>
+            </div>
+        </div>
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">MAIN NAVIGATION</li>
+            <!-- Buyer -->
+            <li *ngIf="userLoginRole == 'buyer'"><a [routerLink]="['buyer-shipment-details']"><span>Shipment Details</span></a></li>
+            <!-- Seller -->
+            <li *ngIf="userLoginRole == 'seller'"><a [routerLink]="['seller-shipment-details']"><span>Shipment Details</span></a>
+                <li *ngIf="userLoginRole == 'seller'"><a [routerLink]="['seller-add-shipment']"><span>Add Shipment Details</span></a>
+            </li>
+            <!-- Provider -->
+            <li *ngIf="userLoginRole == 'logistic'"><a [routerLink]="['provider-shipment-details']"><span>Shipment Details</span></a>
+            </li>
+        </ul>
+    </section>
+</aside>
